@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace SisAdmin\Events;
 
 abstract class Event
 {
