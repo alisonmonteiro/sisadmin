@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b5322688c40f7830b3fe88122e905ddb",
-    "content-hash": "5897e4fd48a72ee015f42db21e976577",
+    "hash": "78a77bdd211707e4597cb8e684c0ebff",
+    "content-hash": "f82e14f0ad9c2a40f03139e25fc89327",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -733,6 +733,89 @@
             "time": "2014-09-09 13:34:57"
         },
         {
+            "name": "erusev/parsedown",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown.git",
+                "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
+                "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "time": "2015-10-04 16:44:32"
+        },
+        {
+            "name": "erusev/parsedown-extra",
+            "version": "0.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown-extra.git",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2015-11-01 10:19:22"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -1006,6 +1089,60 @@
                 "laravel"
             ],
             "time": "2016-07-20 13:13:06"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.2.*",
+                "illuminate/routing": "5.2.*",
+                "illuminate/session": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "illuminate/view": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "5.2.*",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "http://laravelcollective.com",
+            "time": "2016-01-27 22:29:54"
         },
         {
             "name": "league/flysystem",
@@ -1418,6 +1555,148 @@
                 "random"
             ],
             "time": "2016-03-18 20:34:03"
+        },
+        {
+            "name": "pingpong/generators",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pingpong-labs/generators.git",
+                "reference": "c32bb5da3ddf8944e9ad4293fa2f309108521220"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pingpong-labs/generators/zipball/c32bb5da3ddf8944e9ad4293fa2f309108521220",
+                "reference": "c32bb5da3ddf8944e9ad4293fa2f309108521220",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "~2.5",
+                "illuminate/filesystem": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "php": ">=5.4.0",
+                "pingpong/support": "2.2.*@dev"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pingpong\\Generators\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pingpong Labs",
+                    "email": "pingpong.labs@gmail.com"
+                }
+            ],
+            "description": "Laravel Generators",
+            "keywords": [
+                "generators",
+                "laravel",
+                "pingpong"
+            ],
+            "time": "2016-01-06 08:28:33"
+        },
+        {
+            "name": "pingpong/modules",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pingpong-labs/modules.git",
+                "reference": "c9901ba65d7556053743b768939fc42aa9a7c84a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pingpong-labs/modules/zipball/c9901ba65d7556053743b768939fc42aa9a7c84a",
+                "reference": "c9901ba65d7556053743b768939fc42aa9a7c84a",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.2.*",
+                "laravelcollective/html": "~5.0",
+                "php": ">=5.4.0",
+                "pingpong/generators": "2.2.*",
+                "pingpong/support": "2.2.*"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pingpong\\Modules\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pingpong Labs",
+                    "email": "pingpong.labs@gmail.com"
+                }
+            ],
+            "description": "Laravel Modules",
+            "keywords": [
+                "hmvc",
+                "laravel",
+                "module",
+                "modules",
+                "pingpong"
+            ],
+            "time": "2016-01-11 07:46:38"
+        },
+        {
+            "name": "pingpong/support",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pingpong-labs/support.git",
+                "reference": "2b4ada3e8071da1b39152cfb6a2df86f053d8bb6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pingpong-labs/support/zipball/2b4ada3e8071da1b39152cfb6a2df86f053d8bb6",
+                "reference": "2b4ada3e8071da1b39152cfb6a2df86f053d8bb6",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown-extra": "0.7.*",
+                "illuminate/filesystem": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pingpong\\Support\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pingpong Labs",
+                    "email": "pingpong.labs@gmail.com"
+                }
+            ],
+            "description": "Support Component of Pingpong Sky Package",
+            "time": "2016-01-07 08:23:04"
         },
         {
             "name": "psr/log",

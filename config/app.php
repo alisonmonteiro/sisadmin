@@ -160,6 +160,7 @@ return [
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Pingpong\Modules\ModulesServiceProvider::class,
 
     ],
 
@@ -214,6 +215,7 @@ return [
          * Other Packages Facades...
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Module' => Pingpong\Modules\Facades\Module::class,
 
     ],
 
