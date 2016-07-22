@@ -1,2 +1,4 @@
 /vendor
 .env
+.ide_helper.php
+.phpstorm.meta.php

@@ -155,6 +155,12 @@ return [
          */
         SisAdmin\Core\Providers\RouteServiceProvider::class,
 
+        /*
+         * Other Packages Service Providers...
+         */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
     ],
 
     /*
@@ -203,6 +209,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Other Packages Facades...
+         */
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 
