@@ -34,7 +34,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => SisAdmin\User::class,
+        'model' => null,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

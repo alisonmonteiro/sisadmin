@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => SisAdmin\User::class,
+            'model' => null,
         ],
 
         // 'users' => [

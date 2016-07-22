@@ -153,10 +153,7 @@ return [
         /*
          * Application Service Providers...
          */
-        SisAdmin\Providers\AppServiceProvider::class,
-        SisAdmin\Providers\AuthServiceProvider::class,
-        SisAdmin\Providers\EventServiceProvider::class,
-        SisAdmin\Providers\RouteServiceProvider::class,
+        SisAdmin\Core\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -173,6 +170,9 @@ return [
 
     'aliases' => [
 
+        /*
+         * Laravel Framework Facades...
+         */
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
