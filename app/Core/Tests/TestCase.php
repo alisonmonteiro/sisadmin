@@ -27,4 +27,32 @@ abstract class TestCase extends BaseTestCase
 
         return $app;
     }
+
+    /**
+     * Setup the test environment.
+     *
+     * @return void
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->runDatabaseMigrations();
+    }
+
+    /**
+     * Define hooks to migrate the database before and after each test.
+     *
+     * @return void
+     */
+    public function runDatabaseMigrations()
+    {
+        $this->artisan('migrate');
+        $this->artisan('module:migrate');
+
+        $this->beforeApplicationDestroyed(function () {
+            $this->artisan('migrate:rollback');
+            $this->artisan('module:migrate-rollback');
+        });
+    }
 }
