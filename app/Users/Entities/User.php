@@ -3,11 +3,12 @@
 namespace SisAdmin\Users\Entities;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use SisAdmin\Core\Traits\Uuids;
 
 /**
  * SisAdmin\Users\Entities\User
  *
- * @property integer $id
+ * @property string $id
  * @property string $name
  * @property string $email
  * @property string $password
@@ -31,6 +32,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
+    use Uuids;
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
     /**
      * The table associated with the model.
      *

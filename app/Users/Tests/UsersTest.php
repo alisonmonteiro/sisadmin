@@ -21,7 +21,7 @@ class UsersTest extends TestCase
     {
         $users = factory(User::class, 13)->create();
 
-        $userRetrieved = $this->user->find(1);
+        $userRetrieved = $this->user->latest()->first();
 
         $this->assertEquals($userRetrieved->name, $users[0]->name);
         $this->assertEquals($userRetrieved->email, $users[0]->email);

@@ -5,7 +5,8 @@
     "barryvdh/laravel-ide-helper": "^2.2",
     "barryvdh/laravel-debugbar": "^2.2",
     "doctrine/dbal": "^2.5",
-    "pingpong/modules": "^2.2"
+    "pingpong/modules": "^2.2",
+    "webpatser/laravel-uuid": "^2.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
