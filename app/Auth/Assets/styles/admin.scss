@@ -1,0 +1,32 @@
+.admin-auth,
+.admin-auth__body {
+  width: 100%;
+  height: 100%;
+}
+
+.admin-auth__body {
+  display: table;
+}
+
+.admin-auth__wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+}
+
+.admin-auth__container {
+  @extend .container-fluid;
+  width: 330px;
+  margin: 0 auto;
+}
+
+.admin-auth__footer {
+  @extend .pull-right;
+}
+
+.admin-auth__flag {
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+}

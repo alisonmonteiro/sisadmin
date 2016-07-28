@@ -2,16 +2,16 @@
 
 Route::group([
     'middleware' => 'web',
-    'prefix' => 'admin',
+    'prefix' => 'admin/auth',
     'namespace' => 'SisAdmin\Auth\Http\Controllers',
 ], function () {
     // Authentication Routes...
-    Route::get('auth', 'AuthController@showLoginForm');
-    Route::post('auth', 'AuthController@login');
-    Route::get('auth/logout', 'AuthController@logout');
+    Route::get('', 'AuthController@showLoginForm');
+    Route::post('', 'AuthController@login');
+    Route::get('logout', 'AuthController@logout');
 
     // Password Reset Routes...
-    Route::get('auth/password/reset/{token?}', 'PasswordController@showResetForm');
-    Route::post('auth/password/email', 'PasswordController@sendResetLinkEmail');
-    Route::post('auth/password/reset', 'PasswordController@reset');
+    Route::get('password/reset/{token?}', 'PasswordController@showResetForm');
+    Route::post('password/email', 'PasswordController@sendResetLinkEmail');
+    Route::post('password/reset', 'PasswordController@reset');
 });
