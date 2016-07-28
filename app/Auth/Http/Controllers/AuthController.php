@@ -18,6 +18,13 @@ class AuthController extends Controller
     protected $redirectTo = 'admin';
 
     /**
+     * Route to redirect after logout.
+     *
+     * @var string
+     */
+    protected $redirectAfterLogout = 'admin';
+
+    /**
      * The login form view.
      *
      * @var string
