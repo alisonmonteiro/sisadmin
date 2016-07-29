@@ -56,14 +56,14 @@
                 <tr>
                     <td class="container-padding footer-text" align="left" style="border-collapse:collapse; color:#aaa; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; padding-left:24px; padding-right:24px">
                         <br><br>
-                        © {{ date('Y') }} {{ trans('info.admin.client.full_name') }}
+                        © {{ date('Y') }} {{ trans('info.client.full_name') }}
                         <br><br>
 
-                        <strong>{{ trans('info.admin.client.full_name') }}</strong><br>
+                        <strong>{{ trans('info.client.full_name') }}</strong><br>
                         <address class="ios-footer">
-                            {!! trans('info.admin.client.address') !!}<br>
+                            {!! trans('info.client.address') !!}<br>
                         </address>
-                        <a href="http://{{ trans('info.admin.client.url') }}" style="color:#aaaaaa">{{ trans('info.admin.client.url') }}</a><br>
+                        <a href="http://{{ trans('info.client.url') }}" style="color:#aaaaaa">{{ trans('info.client.url') }}</a><br>
 
                         <br><br>
                     </td>
