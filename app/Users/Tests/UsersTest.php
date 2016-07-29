@@ -35,10 +35,5 @@ class UsersTest extends TestCase
 
         $this->assertEquals($users[3]->name, $allUsers[3]->name);
         $this->assertEquals($users[6]->email, $allUsers[6]->email);
-
-        $activeUsers = $this->user->where('active', false)->orderBy('name', 'desc')->get();
-
-        $this->assertEquals(true, $activeUsers[1]->active);
-        $this->assertEquals(true, $activeUsers[3]->active);
     }
 }
