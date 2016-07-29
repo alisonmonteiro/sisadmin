@@ -17,18 +17,28 @@ class UsersTest extends TestCase
         $this->user = new UserRepository();
     }
 
+    /**
+     * Test if users can be retrieved.
+     *
+     * @return void
+     */
     public function testUsersCanBeRetrieved()
     {
         $users = factory(User::class, 13)->create();
 
         $userRetrieved = $this->user->latest()->first();
 
-        $this->assertEquals($userRetrieved->name, $users[0]->name);
-        $this->assertEquals($userRetrieved->email, $users[0]->email);
+        $this->assertEquals($users[0]->name, $userRetrieved->name);
+        $this->assertEquals($users[0]->email, $userRetrieved->email);
 
         $allUsers = $this->user->all();
 
-        $this->assertEquals($allUsers[3]->name, $users[3]->name);
-        $this->assertEquals($allUsers[6]->email, $users[6]->email);
+        $this->assertEquals($users[3]->name, $allUsers[3]->name);
+        $this->assertEquals($users[6]->email, $allUsers[6]->email);
+
+        $activeUsers = $this->user->where('active', false)->orderBy('name', 'desc')->get();
+
+        $this->assertEquals(true, $activeUsers[1]->active);
+        $this->assertEquals(true, $activeUsers[3]->active);
     }
 }

@@ -2,14 +2,14 @@
 
 namespace SisAdmin\Core\Tests;
 
-class ExampleTest extends TestCase
+class HomeTest extends TestCase
 {
     /**
-     * A basic functional test example.
+     * Test the homepage controller.
      *
      * @return void
      */
-    public function testBasicExample()
+    public function testIndexController()
     {
         $this->visit('/')
             ->see('SisAdmin');

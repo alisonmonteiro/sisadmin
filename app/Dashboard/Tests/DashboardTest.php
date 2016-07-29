@@ -7,7 +7,12 @@ use SisAdmin\Users\Entities\User;
 
 class DashboardTest extends TestCase
 {
-    public function testIndexRoute()
+    /**
+     * Test the dashboard panel page.
+     *
+     * @return void
+     */
+    public function testIndexController()
     {
         $user = factory(User::class)->create();
 

@@ -4,6 +4,7 @@ namespace SisAdmin\Auth\Http\Controllers;
 
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Http\Request;
 use SisAdmin\Core\Http\Controllers\Controller;
 
 class AuthController extends Controller
@@ -39,5 +40,19 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+    }
+
+    /**
+     * Validate the user login request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return void
+     */
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            $this->loginUsername() => 'required|email',
+            'password' => 'required',
+        ]);
     }
 }

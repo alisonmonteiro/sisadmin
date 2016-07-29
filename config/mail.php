@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'suporte@briba.com.br', 'name' => 'Suporte Briba'],
 
     /*
     |--------------------------------------------------------------------------

@@ -17,7 +17,7 @@ class DashboardController extends Controller
     }
 
     /**
-     * Show the dashboard panel
+     * Show the dashboard panel.
      *
      * @return \Illuminate\View\View
      */

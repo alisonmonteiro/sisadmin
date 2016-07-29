@@ -2,8 +2,9 @@
 
 namespace SisAdmin\Auth\Providers;
 
+use Illuminate\Contracts\Auth\Access\Gate as GateContract;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use Illuminate\Support\ServiceProvider;
 use SisAdmin\Auth\Http\Middleware\Authenticate;
 use SisAdmin\Auth\Http\Middleware\RedirectIfAuthenticated;
 
@@ -17,12 +18,21 @@ class AuthServiceProvider extends ServiceProvider
     protected $defer = false;
 
     /**
+     * The policy mappings for the application.
+     *
+     * @var array
+     */
+    protected $policies = [
+    ];
+
+    /**
      * Boot the application events.
      *
-     * @param \Illuminate\Routing\Router $router
+     * @param \Illuminate\Routing\Router              $router
+     * @param  \Illuminate\Contracts\Auth\Access\Gate $gate
      * @return void
      */
-    public function boot(Router $router)
+    public function boot(Router $router, GateContract $gate)
     {
         $this->registerTranslations();
         $this->registerConfig();
@@ -30,6 +40,8 @@ class AuthServiceProvider extends ServiceProvider
 
         $router->middleware('auth', Authenticate::class);
         $router->middleware('guest', RedirectIfAuthenticated::class);
+
+        $this->registerPolicies($gate);
     }
 
     /**
