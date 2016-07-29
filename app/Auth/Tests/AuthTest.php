@@ -7,6 +7,11 @@ use SisAdmin\Users\Entities\User;
 
 class AuthTest extends TestCase
 {
+    /**
+     * User must be redirected to login form.
+     *
+     * @return void
+     */
     public function testShowLoginPageIfNotAuthenticated()
     {
         $this->visit('admin')
@@ -14,6 +19,11 @@ class AuthTest extends TestCase
             ->see(trans('auth::info.name'));
     }
 
+    /**
+     * Users already authenticated must be redirected to dashboard.
+     *
+     * @return void
+     */
     public function testUserAlreadyAuthenticated()
     {
         $user = factory(User::class)->create();
@@ -24,7 +34,12 @@ class AuthTest extends TestCase
             ->see(trans('dashboard::info.name'));
     }
 
-    public function testEmailMustBeFilled()
+    /**
+     * The email field must be valid on login form.
+     *
+     * @return void
+     */
+    public function testEmailMustBeValid()
     {
         $this->visit('admin')
             ->see(trans('auth::form.login'))
@@ -33,10 +48,7 @@ class AuthTest extends TestCase
             ->see(trans('validation.filled', [
                 'attribute' => trans('auth::form.email'),
             ]));
-    }
 
-    public function testEmailMustBeValid()
-    {
         $this->visit('admin')
             ->see(trans('auth::form.login'))
             ->type('some', 'email')
@@ -47,6 +59,11 @@ class AuthTest extends TestCase
             ]));
     }
 
+    /**
+     * The password field might not be empty
+     *
+     * @return void
+     */
     public function testPasswordMustBeFilled()
     {
         $this->visit('admin')
@@ -58,6 +75,11 @@ class AuthTest extends TestCase
             ]));
     }
 
+    /**
+     * The users must be able to login through the form.
+     *
+     * @return void
+     */
     public function testUserCanLogin()
     {
         $user = factory(User::class)->create([
@@ -79,5 +101,22 @@ class AuthTest extends TestCase
             ->type('correctpassword', 'password')
             ->press(trans('auth::form.login'))
             ->see(trans('dashboard::info.name'));
+    }
+
+    /**
+     * Users may need to reset their password.
+     *
+     * @return void
+     */
+    public function testResetPassword()
+    {
+        $user = factory(User::class)->create([
+            'email' => 'nil@briba.com.br',
+        ]);
+
+        $this->visit('admin/auth/password/reset')
+            ->see(trans('auth::form.reset'))
+            ->type($user->email, 'email')
+            ->press(trans('auth::form.send'));
     }
 }
