@@ -6,6 +6,7 @@
     "barryvdh/laravel-debugbar": "^2.2",
     "doctrine/dbal": "^2.5",
     "pingpong/modules": "^2.2",
+    "pingpong/menus": "^2.2",
     "webpatser/laravel-uuid": "^2.0",
     "guzzlehttp/guzzle": "^6.2"
   },
@@ -24,6 +25,16 @@
       "SisAdmin\\": "app/"
     }
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/briba/modules"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/briba/menus"
+    }
+  ],
   "config": {
     "preferred-install": "dist"
   },

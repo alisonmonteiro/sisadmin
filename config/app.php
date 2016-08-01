@@ -154,6 +154,7 @@ return [
          * Application Service Providers...
          */
         SisAdmin\Core\Providers\RouteServiceProvider::class,
+        SisAdmin\Core\Providers\MenusServiceProvider::class,
 
         /*
          * Other Packages Service Providers...
@@ -216,6 +217,7 @@ return [
          */
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Module' => Pingpong\Modules\Facades\Module::class,
+        'Menu' => Pingpong\Menus\MenuFacade::class,
 
     ],
 
