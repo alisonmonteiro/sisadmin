@@ -4,7 +4,8 @@
 @section('description', trans('auth::info.description'))
 
 @section('content')
-    <div class="lead">{{ trans('auth::form.reset') }}</div>
+    <div class="lead text-center">{{ trans('auth::form.reset') }}</div>
+    <br>
 
     @if (session('status'))
         <div class="alert alert-success">
@@ -12,7 +13,7 @@
         </div>
     @endif
 
-    <form role="form" method="POST" action="{{ url('admin/auth/password/email') }}">
+    <form role="form" method="POST" action="{{ url('admin/auth/password/email') }}" class="admin-auth__form">
         {{ csrf_field() }}
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -26,7 +27,10 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">{{ trans('auth::form.send') }}</button>
+            <a class="admin-auth__forgot pull-left" href="{{ url('admin/auth') }}">{{ trans('auth::form.back') }}</a>
+
+            <button type="submit" class="btn btn-default pull-right">{{ trans('auth::form.send') }}</button>
+            <div class="clearfix"></div>
         </div>
     </form>
 @endsection

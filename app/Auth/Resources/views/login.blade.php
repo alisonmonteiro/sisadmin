@@ -4,7 +4,7 @@
 @section('description', trans('auth::info.description'))
 
 @section('content')
-    <form role="form" method="POST" action="{{ url('admin/auth') }}">
+    <form role="form" method="POST" action="{{ url('admin/auth') }}" class="admin-auth__form">
         <input type="hidden" name="remember" value="1">
         {{ csrf_field() }}
 
@@ -19,8 +19,6 @@
 
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
             <label for="password" class="control-label pull-left">{{ trans('auth::form.password') }}</label>
-            <a class="pull-right" href="{{ url('admin/auth/password/reset') }}">{{ trans('auth::form.forgot') }}</a>
-
             <input id="password" type="password" class="form-control input-lg" name="password">
 
             @if ($errors->has('password'))
@@ -29,7 +27,10 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block btn-lg">{{ trans('auth::form.login') }}</button>
+            <a class="admin-auth__forgot pull-left" href="{{ url('admin/auth/password/reset') }}">{{ trans('auth::form.forgot') }}</a>
+
+            <button type="submit" class="btn btn-default pull-right">{{ trans('auth::form.login') }}</button>
+            <div class="clearfix"></div>
         </div>
     </form>
 @endsection

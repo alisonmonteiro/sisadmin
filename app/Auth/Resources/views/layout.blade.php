@@ -16,7 +16,6 @@
         <img src="{{ url('img/sisadmin.png') }}" alt="{{ trans('info.admin.name') }}" class="img-responsive">
 
         <br>
-        <br>
         @yield('content')
         <br>
 

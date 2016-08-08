@@ -8,4 +8,5 @@ return [
     'email' => 'E-mail',
     'password' => 'Senha',
     'confirm_password' => 'Confirmar senha',
+    'back' => 'Voltar',
 ];
