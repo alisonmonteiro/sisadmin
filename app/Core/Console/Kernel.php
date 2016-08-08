@@ -4,8 +4,6 @@ namespace SisAdmin\Core\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use SisAdmin\Core\Console\Commands\ConsoleMakeCommand;
-use SisAdmin\Core\Console\Commands\ProviderMakeCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,8 +13,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        ConsoleMakeCommand::class,
-        ProviderMakeCommand::class,
     ];
 
     /**

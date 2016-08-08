@@ -1,0 +1,15 @@
+{
+  "name": "briba/core",
+  "description": "",
+  "authors": [
+    {
+      "name": "Briba",
+      "email": "briba@briba.com.br"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SisAdmin\\Core\\": ""
+    }
+  }
+}

@@ -151,17 +151,12 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Application Service Providers...
-         */
-        SisAdmin\Core\Providers\RouteServiceProvider::class,
-        SisAdmin\Core\Providers\MenusServiceProvider::class,
-
-        /*
          * Other Packages Service Providers...
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Pingpong\Modules\ModulesServiceProvider::class,
+        Pingpong\Menus\MenusServiceProvider::class,
 
     ],
 
