@@ -20,5 +20,8 @@
   },
   "dependencies": {
     "bootstrap-sass": "^3.3.7"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/gulp --production"
   }
 }
