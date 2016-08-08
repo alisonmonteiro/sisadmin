@@ -1,4 +1,26 @@
 {
+  "name": "briba/sisadmin",
+  "description": "The Briba's CMS",
+  "version": "0.0.1",
+  "type": "project",
+  "keywords": [
+    "Briba",
+    "CMS",
+    "Laravel"
+  ],
+  "homepage": "http://sisadmin.briba.com.br",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nil Késede",
+      "email": "nil@ksde.pw",
+      "homepage": "http://nil@ksde.pw",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "suporte@briba.com.br"
+  },
   "require": {
     "php": ">=5.5.9",
     "laravel/framework": "5.2.*",
@@ -18,12 +40,12 @@
     "symfony/dom-crawler": "2.8.*|3.0.*"
   },
   "autoload": {
-    "classmap": [
-      "database"
-    ],
     "psr-4": {
       "SisAdmin\\": "app/"
-    }
+    },
+    "classmap": [
+      "database"
+    ]
   },
   "repositories": [
     {
@@ -40,7 +62,7 @@
   },
   "scripts": {
     "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+      "php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
       "php artisan key:generate"

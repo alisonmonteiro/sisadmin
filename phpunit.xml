@@ -9,7 +9,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Application Test Suite">
+        <testsuite name="SisAdmin Test Suite">
             <directory suffix="Test.php">./app/*/Tests</directory>
         </testsuite>
     </testsuites>
