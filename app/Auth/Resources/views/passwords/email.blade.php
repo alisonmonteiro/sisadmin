@@ -4,17 +4,16 @@
 @section('description', trans('auth::info.description'))
 
 @section('content')
-    <div class="lead text-center">{{ trans('auth::form.reset') }}</div>
-    <br>
-
-    @if (session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
-
     <form role="form" method="POST" action="{{ url('admin/auth/password/email') }}" class="admin-auth__form">
         {{ csrf_field() }}
+
+        <div class="lead text-center">{{ trans('auth::form.reset') }}</div>
+
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <label for="email" class="control-label">{{ trans('auth::form.email') }}</label>

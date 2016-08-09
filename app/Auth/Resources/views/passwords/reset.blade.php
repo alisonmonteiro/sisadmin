@@ -4,13 +4,11 @@
 @section('description', trans('auth::info.description'))
 
 @section('content')
-    <div class="lead text-center">{{ trans('auth::form.reset') }}</div>
-    <br>
-
     <form role="form" method="POST" action="{{ url('admin/auth/password/reset') }}" class="admin-auth__form">
         {{ csrf_field() }}
-
         <input type="hidden" name="token" value="{{ $token }}">
+
+        <div class="lead text-center">{{ trans('auth::form.reset') }}</div>
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <label for="email" class="control-label">{{ trans('auth::form.email') }}</label>
@@ -42,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-default btn-block btn-lg">{{ trans('auth::form.reset') }}</button>
+            <button type="submit" class="btn btn-default pull-right">{{ trans('auth::form.reset') }}</button>
         </div>
     </form>
 @endsection

@@ -22,7 +22,7 @@
         <div class="clearfix"></div>
 
         <div class="admin-auth__footer">
-            {{ trans('info.admin.vendor') }} {{ trans('info.admin.phone') }}
+            {{ trans('info.admin.name') }} - {{ trans('info.admin.description') }} - {{ trans('info.admin.vendor') }} {{ trans('info.admin.phone') }}
             <img src="{{ url('img/brasil.png') }}" alt="{{ trans('info.admin.country') }}" class="admin-auth__flag">
         </div>
 

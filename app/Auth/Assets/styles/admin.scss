@@ -46,7 +46,7 @@
 
 .admin-auth__form {
   width: 100%;
-  max-width: 350px;
+  max-width: 320px;
   margin: 0 auto;
 
   @media (min-width: $grid-float-breakpoint) {
@@ -56,6 +56,7 @@
 
 .admin-auth__footer {
   @extend .pull-right;
+  @extend .text-right;
 }
 
 .admin-auth__flag {
