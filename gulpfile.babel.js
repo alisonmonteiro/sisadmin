@@ -2,6 +2,16 @@ import gulp from "gulp";
 import gulpLoadPlugins from "gulp-load-plugins";
 
 const $ = gulpLoadPlugins();
+const path = {
+  styles: {
+    main: './resources/assets/styles/',
+    modules: './app/*/Assets/styles/'
+  },
+  scripts: {
+    main: './resources/assets/scripts/',
+    modules: './app/*/Assets/scripts/'
+  }
+};
 
 const processCss = (files, name) => {
   const AUTOPREFIXER_BROWSERS = [
@@ -21,7 +31,10 @@ const processCss = (files, name) => {
     .pipe($.concat(name + '.css'))
     .pipe($.sass({
       precision: 10,
-      includePaths: ['./node_modules/']
+      includePaths: [
+        './node_modules/',
+        path.styles.main
+      ]
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.replace('/*!', '/*'))
@@ -46,8 +59,8 @@ const processJs = (files, name) => {
 
 gulp.task('styles', () => {
   return processCss([
-    './resources/assets/styles/admin.scss',
-    './app/*/Assets/styles/admin.scss'
+    path.styles.main + 'admin.scss',
+    path.styles.modules + 'admin.scss'
   ], 'admin').pipe($.size({
     title: 'styles'
   }));
@@ -55,8 +68,8 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   return processJs([
-    './resources/assets/scripts/admin.js',
-    './app/*/Assets/scripts/admin.js'
+    path.scripts.main + 'admin.js',
+    path.scripts.modules + 'admin.js'
   ], 'admin').pipe($.size({
     title: 'scripts'
   }));
@@ -64,12 +77,12 @@ gulp.task('scripts', () => {
 
 gulp.task('watch', ['default'], function() {
   gulp.watch([
-    './app/*/Assets/**/*.scss',
-    './resources/assets/styles/**/*.scss'
+    path.styles.modules + '**/*.scss',
+    path.styles.main + '**/*.scss'
   ], ['styles']);
   gulp.watch([
-    './app/*/Assets/**/*.js',
-    './resources/assets/scripts/**/*.js'
+    path.scripts.modules + '**/*.js',
+    path.scripts.main + '**/*.js'
   ], ['scripts']);
 });
 
