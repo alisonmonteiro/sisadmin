@@ -8,7 +8,7 @@ Route::group([
     // Authentication Routes...
     Route::get('', 'AuthController@showLoginForm');
     Route::post('', 'AuthController@login');
-    Route::get('logout', 'AuthController@logout');
+    Route::post('logout', 'AuthController@logout');
 
     // Password Reset Routes...
     Route::get('password/reset/{token?}', 'PasswordController@showResetForm');
