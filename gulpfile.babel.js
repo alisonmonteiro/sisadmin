@@ -75,7 +75,7 @@ gulp.task('scripts', () => {
   }));
 });
 
-gulp.task('watch', ['default'], function() {
+gulp.task('watch', ['default'], () => {
   gulp.watch([
     path.styles.modules + '**/*.scss',
     path.styles.main + '**/*.scss'

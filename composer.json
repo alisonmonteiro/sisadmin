@@ -22,7 +22,7 @@
     "email": "suporte@briba.com.br"
   },
   "require": {
-    "php": ">=5.5.9",
+    "php": ">=5.6.4",
     "laravel/framework": "5.2.*",
     "barryvdh/laravel-ide-helper": "^2.2",
     "barryvdh/laravel-debugbar": "^2.2",
@@ -35,17 +35,17 @@
   "require-dev": {
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
-    "phpunit/phpunit": "~4.0",
-    "symfony/css-selector": "2.8.*|3.0.*",
-    "symfony/dom-crawler": "2.8.*|3.0.*"
+    "phpunit/phpunit": "~5.0",
+    "symfony/css-selector": "3.1.*",
+    "symfony/dom-crawler": "3.1.*"
   },
   "autoload": {
-    "psr-4": {
-      "SisAdmin\\": "app/"
-    },
     "classmap": [
       "database"
-    ]
+    ],
+    "psr-4": {
+      "SisAdmin\\": "app/"
+    }
   },
   "repositories": [
     {
