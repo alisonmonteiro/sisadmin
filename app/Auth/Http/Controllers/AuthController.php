@@ -2,21 +2,28 @@
 
 namespace SisAdmin\Auth\Http\Controllers;
 
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
+use SisAdmin\Auth\Traits\AuthenticatesUsers;
 use SisAdmin\Core\Http\Controllers\Controller;
 
 class AuthController extends Controller
 {
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesUsers, ThrottlesLogins;
 
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = 'admin';
+    protected $redirectPath = 'admin';
+
+    /**
+     * Path to the login route.
+     *
+     * @var string
+     */
+    protected $loginPath = 'admin/auth';
 
     /**
      * Route to redirect after logout.
@@ -26,20 +33,45 @@ class AuthController extends Controller
     protected $redirectAfterLogout = 'admin';
 
     /**
-     * The login form view.
-     *
-     * @var string
-     */
-    protected $loginView = 'auth::login';
-
-    /**
      * Create a new authentication controller instance.
-     *
-     * @return \SisAdmin\Auth\Http\Controllers\AuthController
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logout']);
+    }
+
+    /**
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogin()
+    {
+        return view('auth::login');
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout()
+    {
+        return $this->getLogout();
+    }
+
+    /**
+     * Get the needed authorization credentials from the request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return array
+     */
+    protected function getCredentials(Request $request)
+    {
+        $credentials = $request->only($this->loginUsername(), 'password');
+        $credentials = array_merge($credentials, ['active' => true]);
+
+        return $credentials;
     }
 
     /**

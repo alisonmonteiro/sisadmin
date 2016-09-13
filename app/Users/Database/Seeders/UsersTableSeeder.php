@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use SisAdmin\Users\Entities\User;
 use SisAdmin\Users\Repositories\UserRepository;
 
-class UsersDatabaseSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

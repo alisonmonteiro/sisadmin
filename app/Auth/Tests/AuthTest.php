@@ -114,7 +114,7 @@ class AuthTest extends TestCase
             'email' => 'nil@briba.com.br',
         ]);
 
-        $this->visit('admin/auth/password/reset')
+        $this->visit('admin/auth/password/email')
             ->see(trans('auth::form.reset'))
             ->type($user->email, 'email')
             ->press(trans('auth::form.send'));

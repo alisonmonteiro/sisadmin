@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * Boot the application events.
      *
-     * @param \Illuminate\Routing\Router              $router
+     * @param \Illuminate\Routing\Router $router
      * @param  \Illuminate\Contracts\Auth\Access\Gate $gate
      * @return void
      */

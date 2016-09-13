@@ -11,9 +11,4 @@
 |
 */
 
-Route::group([
-    'middleware' => 'web',
-    'namespace' => 'SisAdmin\Core\Http\Controllers',
-], function () {
-    Route::get('/', 'HomeController@getIndex');
-});
+Route::get('/', 'SisAdmin\Core\Http\Controllers\HomeController@getIndex');

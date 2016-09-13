@@ -8,8 +8,6 @@ class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
-     * @return \SisAdmin\Dashboard\Http\Controllers\DashboardController
      */
     public function __construct()
     {

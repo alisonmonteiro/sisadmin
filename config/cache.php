@@ -11,8 +11,6 @@ return [
     | using this caching library. This connection is used when another is
     | not explicitly specified when executing a given caching function.
     |
-    | Supported: "apc", "array", "database", "file", "memcached", "redis"
-    |
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
@@ -53,9 +51,7 @@ return [
             'driver' => 'memcached',
             'servers' => [
                 [
-                    'host' => env('MEMCACHED_HOST', '127.0.0.1'),
-                    'port' => env('MEMCACHED_PORT', 11211),
-                    'weight' => 100,
+                    'host' => '127.0.0.1', 'port' => 11211, 'weight' => 100,
                 ],
             ],
         ],

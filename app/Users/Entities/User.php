@@ -2,7 +2,13 @@
 
 namespace SisAdmin\Users\Entities;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use SisAdmin\Core\Traits\Uuids;
 
 /**
@@ -30,9 +36,12 @@ use SisAdmin\Core\Traits\Uuids;
  * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class User extends Authenticatable
+class User extends Model implements
+    AuthenticatableContract,
+    AuthorizableContract,
+    CanResetPasswordContract
 {
-    use Uuids;
+    use Authenticatable, Authorizable, CanResetPassword, Uuids;
 
     /**
      * Indicates if the IDs are auto-incrementing.

@@ -1,17 +1,19 @@
 <?php
 
 Route::group([
-    'middleware' => 'web',
     'prefix' => 'admin/auth',
     'namespace' => 'SisAdmin\Auth\Http\Controllers',
 ], function () {
     // Authentication Routes...
-    Route::get('', 'AuthController@showLoginForm');
-    Route::post('', 'AuthController@login');
+    Route::get('', 'AuthController@getLogin');
+    Route::post('', 'AuthController@postLogin');
     Route::post('logout', 'AuthController@logout');
 
-    // Password Reset Routes...
-    Route::get('password/reset/{token?}', 'PasswordController@showResetForm');
-    Route::post('password/email', 'PasswordController@sendResetLinkEmail');
-    Route::post('password/reset', 'PasswordController@reset');
+    // Password reset link request routes...
+    Route::get('password/email', 'PasswordController@getEmail');
+    Route::post('password/email', 'PasswordController@postEmail');
+
+    // Password reset routes...
+    Route::get('password/reset/{token}', 'PasswordController@getReset');
+    Route::post('password/reset', 'PasswordController@postReset');
 });

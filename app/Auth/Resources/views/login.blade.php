@@ -27,7 +27,7 @@
         </div>
 
         <div class="form-group">
-            <a class="admin-auth__forgot pull-left" href="{{ url('admin/auth/password/reset') }}">{{ trans('auth::form.forgot') }}</a>
+            <a class="admin-auth__forgot pull-left" href="{{ url('admin/auth/password/email') }}">{{ trans('auth::form.forgot') }}</a>
 
             <button type="submit" class="btn btn-default pull-right">{{ trans('auth::form.login') }}</button>
             <div class="clearfix"></div>
