@@ -4,7 +4,7 @@
 
 @section('content')
     {{ trans('auth::password.message', [
-        'client' =>trans('info.client.name')
+        'client' => config('client.name')
     ]) }}
     <br>
     <br>

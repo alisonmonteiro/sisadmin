@@ -36,7 +36,7 @@
             <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" style="border-spacing:0; mso-table-lspace:0; mso-table-rspace:0; max-width:600px; width:600px">
                 <tr>
                     <td class="container-padding header" align="left" style="border-collapse:collapse; color:#666666; font-family:Helvetica, Arial, sans-serif; font-size:24px; font-weight:bold; padding-bottom:12px; padding-left:24px; padding-right:24px">
-                        {{ trans('info.client.name') }}
+                        {{ config('client.name') }}
                     </td>
                 </tr>
                 <tr>
@@ -56,14 +56,14 @@
                 <tr>
                     <td class="container-padding footer-text" align="left" style="border-collapse:collapse; color:#aaa; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; padding-left:24px; padding-right:24px">
                         <br><br>
-                        © {{ date('Y') }} {{ trans('info.client.full_name') }}
+                        © {{ date('Y') }} {{ config('client.full_name') }}
                         <br><br>
 
-                        <strong>{{ trans('info.client.full_name') }}</strong><br>
+                        <strong>{{ config('client.full_name') }}</strong><br>
                         <address class="ios-footer">
-                            {!! trans('info.client.address') !!}<br>
+                            {!! config('client.address') !!}<br>
                         </address>
-                        <a href="http://{{ trans('info.client.url') }}" style="color:#aaaaaa">{{ trans('info.client.url') }}</a><br>
+                        <a href="http://{{ config('client.url') }}" style="color:#aaaaaa">{{ config('client.url') }}</a><br>
 
                         <br><br>
                     </td>
