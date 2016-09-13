@@ -36,7 +36,7 @@
             <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" style="border-spacing:0; mso-table-lspace:0; mso-table-rspace:0; max-width:600px; width:600px">
                 <tr>
                     <td class="container-padding header" align="left" style="border-collapse:collapse; color:#666666; font-family:Helvetica, Arial, sans-serif; font-size:24px; font-weight:bold; padding-bottom:12px; padding-left:24px; padding-right:24px">
-                        {{ config('client.name') }}
+                        {{ config('info.client.name') }}
                     </td>
                 </tr>
                 <tr>
@@ -56,14 +56,14 @@
                 <tr>
                     <td class="container-padding footer-text" align="left" style="border-collapse:collapse; color:#aaa; font-family:Helvetica, Arial, sans-serif; font-size:12px; line-height:16px; padding-left:24px; padding-right:24px">
                         <br><br>
-                        © {{ date('Y') }} {{ config('client.full_name') }}
+                        © {{ date('Y') }} {{ config('info.client.full_name') }}
                         <br><br>
 
-                        <strong>{{ config('client.full_name') }}</strong><br>
+                        <strong>{{ config('info.client.full_name') }}</strong><br>
                         <address class="ios-footer">
-                            {!! config('client.address') !!}<br>
+                            {!! config('info.client.address') !!}<br>
                         </address>
-                        <a href="http://{{ config('client.url') }}" style="color:#aaaaaa">{{ config('client.url') }}</a><br>
+                        <a href="http://{{ config('info.client.url') }}" style="color:#aaaaaa">{{ config('info.client.url') }}</a><br>
 
                         <br><br>
                     </td>

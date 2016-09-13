@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title') | {{ config('admin.name') }}</title>
+    <title>@yield('title') | {{ config('info.admin.name') }}</title>
     <meta name="description" content="@yield('description')">
 
     <link rel="stylesheet" href="{{ url('css/admin.css') }}">
