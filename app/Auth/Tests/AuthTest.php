@@ -10,8 +10,6 @@ class AuthTest extends TestCase
 {
     /**
      * User must be redirected to login form.
-     *
-     * @return void
      */
     public function testShowLoginPageIfNotAuthenticated()
     {
@@ -22,8 +20,6 @@ class AuthTest extends TestCase
 
     /**
      * Users already authenticated must be redirected to dashboard.
-     *
-     * @return void
      */
     public function testUserAlreadyAuthenticated()
     {
@@ -37,8 +33,6 @@ class AuthTest extends TestCase
 
     /**
      * The email field must be valid on login form.
-     *
-     * @return void
      */
     public function testEmailMustBeValid()
     {
@@ -62,8 +56,6 @@ class AuthTest extends TestCase
 
     /**
      * The password field might not be empty
-     *
-     * @return void
      */
     public function testPasswordMustBeFilled()
     {
@@ -78,8 +70,6 @@ class AuthTest extends TestCase
 
     /**
      * The users must be able to login through the form.
-     *
-     * @return void
      */
     public function testUserCanLogin()
     {
@@ -95,7 +85,7 @@ class AuthTest extends TestCase
             ->type($user->email, 'email')
             ->type('wrongpassword', 'password')
             ->press(trans('auth::form.login'))
-            ->see(trans('auth.failed'));
+            ->see(trans('auth::form.failed'));
 
         // Success
         $this->visit('admin')
@@ -108,8 +98,6 @@ class AuthTest extends TestCase
 
     /**
      * Users may need to reset their password.
-     *
-     * @return void
      */
     public function testResetPassword()
     {

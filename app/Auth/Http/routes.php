@@ -7,7 +7,7 @@ Route::group([
     // Authentication Routes...
     Route::get('', 'AuthController@getLogin');
     Route::post('', 'AuthController@postLogin');
-    Route::post('logout', 'AuthController@logout');
+    Route::get('logout', 'AuthController@getLogout');
 
     // Password reset link request routes...
     Route::get('password/email', 'PasswordController@getEmail');

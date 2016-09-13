@@ -3,7 +3,7 @@
 @section('title', trans('auth::form.reset'))
 
 @section('content')
-    {{ trans('auth::password.message', [
+    {{ trans('auth::passwords.message', [
         'client' => config('info.client.name')
     ]) }}
     <br>
@@ -15,7 +15,7 @@
     </center>
     <br>
     <br>
-    {{ trans('auth::password.expire', [
+    {{ trans('auth::passwords.expire', [
         'time'=> config('auth.passwords.expire')
     ]) }}
 @endsection
