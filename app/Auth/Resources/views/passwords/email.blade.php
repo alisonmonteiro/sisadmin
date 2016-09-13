@@ -18,7 +18,7 @@
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <label for="email" class="control-label">{{ trans('auth::form.email') }}</label>
 
-            <input id="email" type="email" class="form-control input-lg" name="email" value="{{ old('email') }}">
+            <input id="email" type="email" class="form-control input-lg" name="email" value="{{ old('email') }}" autofocus>
 
             @if ($errors->has('email'))
                 <span class="help-block"><strong>{{ $errors->first('email') }}</strong></span>

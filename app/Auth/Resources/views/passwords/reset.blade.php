@@ -23,7 +23,7 @@
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
             <label for="password" class="control-label">{{ trans('auth::form.password') }}</label>
 
-            <input id="password" type="password" class="form-control input-lg" name="password">
+            <input id="password" type="password" class="form-control input-lg" name="password" autofocus>
 
             @if ($errors->has('password'))
                 <span class="help-block"><strong>{{ $errors->first('password') }}</strong></span>
