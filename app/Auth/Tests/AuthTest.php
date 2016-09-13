@@ -2,6 +2,7 @@
 
 namespace SisAdmin\Auth\Tests;
 
+use Carbon\Carbon;
 use SisAdmin\Core\Tests\TestCase;
 use SisAdmin\Users\Entities\User;
 
@@ -84,6 +85,8 @@ class AuthTest extends TestCase
     {
         $user = factory(User::class)->create([
             'password' => bcrypt('correctpassword'),
+            'active' => true,
+            'expires_date' => Carbon::now()->addDay(1),
         ]);
 
         // Fail for wrong password
