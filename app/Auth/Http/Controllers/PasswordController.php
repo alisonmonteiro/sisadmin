@@ -2,12 +2,12 @@
 
 namespace SisAdmin\Auth\Http\Controllers;
 
-use SisAdmin\Auth\Traits\ResetsPasswords;
+use SisAdmin\Auth\Traits\ResetPassword;
 use SisAdmin\Core\Http\Controllers\Controller;
 
 class PasswordController extends Controller
 {
-    use ResetsPasswords;
+    use ResetPassword;
 
     /**
      * The reset password email subject.
@@ -28,14 +28,14 @@ class PasswordController extends Controller
      *
      * @var string
      */
-    protected $linkRequestView = 'auth::passwords.email';
+    protected $linkRequestView = 'auth::password.email';
 
     /**
      * The view with the create new password form.
      *
      * @var string
      */
-    protected $resetView = 'auth::passwords.reset';
+    protected $resetView = 'auth::password.reset';
 
     /**
      * Create a new password controller instance.

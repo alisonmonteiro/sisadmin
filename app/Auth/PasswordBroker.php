@@ -3,10 +3,11 @@
 namespace SisAdmin\Auth;
 
 use Closure;
+use Illuminate\Auth\Passwords\PasswordBroker as BasePasswordBroker;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use SisAdmin\Auth\Contracts\PasswordBroker as PasswordBrokerContract;
 
-class PasswordBroker extends \Illuminate\Auth\Passwords\PasswordBroker
+class PasswordBroker extends BasePasswordBroker
 {
     /**
      * Send a password reset link to a user.

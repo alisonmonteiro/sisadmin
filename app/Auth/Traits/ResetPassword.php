@@ -2,14 +2,14 @@
 
 namespace SisAdmin\Auth\Traits;
 
-use Illuminate\Foundation\Auth\ResetsPasswords as BaseResetsPasswords;
+use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Message;
 use Password;
 
-trait ResetsPasswords
+trait ResetPassword
 {
-    use BaseResetsPasswords;
+    use ResetsPasswords;
 
     /**
      * Display the password reset view for the given token.
@@ -64,7 +64,7 @@ trait ResetsPasswords
         switch ($response) {
             case Password::RESET_LINK_SENT:
                 return redirect()->back()->with('status', trans($response));
-            case Password::INVALID_USER:
+            default:
                 return redirect()->back()->withErrors(['email' => trans($response)]);
         }
     }

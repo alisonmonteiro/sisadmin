@@ -24,36 +24,16 @@ use SisAdmin\Core\Traits\Uuids;
  * @property string $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereId($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereName($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereEmail($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     wherePassword($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereActive($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereRole($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereExpiresDate($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereRememberToken($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereCreatedAt($value)
- * @method static
- *     \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User
- *     whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereName($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereEmail($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User wherePassword($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereActive($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereRole($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereExpiresDate($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\SisAdmin\Users\Entities\User whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class User extends Model implements

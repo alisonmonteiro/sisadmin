@@ -11,35 +11,35 @@ interface PasswordBroker
      *
      * @var string
      */
-    const RESET_LINK_SENT = 'auth::passwords.sent';
+    const RESET_LINK_SENT = 'auth::password.sent';
 
     /**
      * Constant representing a successfully reset password.
      *
      * @var string
      */
-    const PASSWORD_RESET = 'auth::passwords.reset';
+    const PASSWORD_RESET = 'auth::password.reset';
 
     /**
      * Constant representing the user not found response.
      *
      * @var string
      */
-    const INVALID_USER = 'auth::passwords.user';
+    const INVALID_USER = 'auth::password.user';
 
     /**
      * Constant representing an invalid password.
      *
      * @var string
      */
-    const INVALID_PASSWORD = 'auth::passwords.password';
+    const INVALID_PASSWORD = 'auth::password.password';
 
     /**
      * Constant representing an invalid token.
      *
      * @var string
      */
-    const INVALID_TOKEN = 'auth::passwords.token';
+    const INVALID_TOKEN = 'auth::password.token';
 
     /**
      * Send a password reset link to a user.
@@ -68,7 +68,7 @@ interface PasswordBroker
     public function validator(Closure $callback);
 
     /**
-     * Determine if the passwords match for the request.
+     * Determine if the password match for the request.
      *
      * @param  array $credentials
      * @return bool

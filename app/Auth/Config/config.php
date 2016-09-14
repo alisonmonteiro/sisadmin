@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => \SisAdmin\Users\Entities\User::class,
+    'model' => SisAdmin\Users\Entities\User::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -48,7 +48,7 @@ return [
     | Password Reset Settings
     |--------------------------------------------------------------------------
     |
-    | Here you may set the options for resetting passwords including the view
+    | Here you may set the options for resetting password including the view
     | that is your password reset e-mail. You can also set the name of the
     | table that maintains all of the reset tokens for your application.
     |
@@ -59,7 +59,7 @@ return [
     */
 
     'password' => [
-        'email' => 'auth::passwords.message',
+        'email' => 'auth::password.message',
         'table' => 'auth_password_resets',
         'expire' => 60,
     ],
