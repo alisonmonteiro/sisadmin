@@ -5,7 +5,6 @@ namespace SisAdmin\Users\Database\Seeders;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use SisAdmin\Users\Entities\User;
-use SisAdmin\Users\Repositories\UserRepository;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,7 +17,7 @@ class UsersTableSeeder extends Seeder
     {
         Model::unguard();
 
-        UserRepository::create([
+        User::create([
             'name' => 'Nil Késede',
             'email' => 'nil@briba.com.br',
             'password' => bcrypt('piramide'),

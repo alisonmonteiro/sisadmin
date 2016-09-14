@@ -80,4 +80,15 @@ class User extends Model implements
         'password',
         'remember_token',
     ];
+
+    /**
+     * Get all of the models from the database.
+     *
+     * @param  array|mixed $columns
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    public static function all($columns = ['*'])
+    {
+        return self::orderBy('created_at')->get($columns);
+    }
 }
