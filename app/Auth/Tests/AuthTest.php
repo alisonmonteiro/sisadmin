@@ -9,9 +9,11 @@ use SisAdmin\Users\Entities\User;
 class AuthTest extends TestCase
 {
     /**
-     * User must be redirected to login form.
+     * Redirect to the login form if the user isn't authenticated.
+     *
+     * @return void
      */
-    public function testShowLoginPageIfNotAuthenticated()
+    public function testUserNotAuthenticated()
     {
         $this->visit('admin')
             ->dontSee(trans('dashboard::info.name'))
@@ -19,7 +21,10 @@ class AuthTest extends TestCase
     }
 
     /**
-     * Users already authenticated must be redirected to dashboard.
+     * Users already authenticated must be redirected
+     * to dashboard or to the intended page.
+     *
+     * @return void
      */
     public function testUserAlreadyAuthenticated()
     {
@@ -32,9 +37,11 @@ class AuthTest extends TestCase
     }
 
     /**
-     * The email field must be valid on login form.
+     * The email field must be filled.
+     *
+     * @return void
      */
-    public function testEmailMustBeValid()
+    public function testEmailMustBeFilled()
     {
         $this->visit('admin')
             ->see(trans('auth::form.login'))
@@ -43,7 +50,15 @@ class AuthTest extends TestCase
             ->see(trans('validation.filled', [
                 'attribute' => trans('auth::form.email'),
             ]));
+    }
 
+    /**
+     * The email field must contain a valid email address.
+     *
+     * @return void
+     */
+    public function testEmailMustBeValid()
+    {
         $this->visit('admin')
             ->see(trans('auth::form.login'))
             ->type('some', 'email')
@@ -55,7 +70,9 @@ class AuthTest extends TestCase
     }
 
     /**
-     * The password field might not be empty
+     * The password field must not be blank.
+     *
+     * @return void
      */
     public function testPasswordMustBeFilled()
     {
@@ -69,7 +86,53 @@ class AuthTest extends TestCase
     }
 
     /**
-     * The users must be able to login through the form.
+     * The user account must be active.
+     *
+     * @return void
+     */
+    public function testUserMustBeActive()
+    {
+        $user = factory(User::class)->create([
+            'password' => bcrypt('correctpassword'),
+            'active' => false,
+            'expires_date' => Carbon::now()->addDay(1),
+        ]);
+
+        $this->visit('admin')
+            ->see(trans('auth::form.login'))
+            ->type($user->email, 'email')
+            ->type('correctpassword', 'password')
+            ->press(trans('auth::form.login'))
+            ->see(trans('auth::form.failed'));
+    }
+
+    /**
+     * The user's validation date must not be expired.
+     *
+     * @return void
+     */
+    public function testUserMustNotBeExpired()
+    {
+        $user = factory(User::class)->create([
+            'password' => bcrypt('correctpassword'),
+            'active' => true,
+            'expires_date' => Carbon::yesterday(),
+        ]);
+
+        $this->visit('admin')
+            ->see(trans('auth::form.login'))
+            ->type($user->email, 'email')
+            ->type('correctpassword', 'password')
+            ->press(trans('auth::form.login'))
+            ->see(trans('auth::form.failed'));
+    }
+
+    /**
+     * To login into the application the user account
+     * must be active the validation date must not be expired
+     * and enter a correct password on the form.
+     *
+     * @return void
      */
     public function testUserCanLogin()
     {
@@ -98,6 +161,8 @@ class AuthTest extends TestCase
 
     /**
      * Users may need to reset their password.
+     *
+     * @return void
      */
     public function testResetPassword()
     {
