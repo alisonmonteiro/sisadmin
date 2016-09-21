@@ -3,6 +3,7 @@
 namespace SisAdmin\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Menu;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,9 @@ class DashboardServiceProvider extends ServiceProvider
     {
         $this->registerTranslations();
         $this->registerViews();
+
+        $menu = Menu::instance('admin-navbar');
+        $menu->url('admin', trans('dashboard::info.name'));
     }
 
     /**

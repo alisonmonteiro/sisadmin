@@ -5,7 +5,7 @@
  */
 
 // Core variables and mixins
-@import "variables";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 // Reset and dependencies
@@ -23,12 +23,12 @@
 @import "bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
 // Components
-//@import "bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
 //@import "bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
 //@import "bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
 //@import "bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
-//@import "bootstrap-sass/assets/stylesheets/bootstrap/navs";
-//@import "bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/navs";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/navbar";
 //@import "bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
 //@import "bootstrap-sass/assets/stylesheets/bootstrap/pagination";
 //@import "bootstrap-sass/assets/stylesheets/bootstrap/pager";
@@ -54,5 +54,3 @@
 // Utility classes
 @import "bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
-
-@import "bootswatch";

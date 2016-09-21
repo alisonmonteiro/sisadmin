@@ -3,13 +3,23 @@ import gulpLoadPlugins from "gulp-load-plugins";
 
 const $ = gulpLoadPlugins();
 const path = {
-  styles: {
-    main: './resources/assets/styles/',
-    modules: './app/*/Assets/styles/'
+  source: {
+    styles: {
+      main: './resources/assets/styles/',
+      modules: './app/*/Assets/styles/'
+    },
+    scripts: {
+      main: './resources/assets/scripts/',
+      modules: './app/*/Assets/scripts/'
+    },
+    fonts: [
+      './node_modules/font-awesome/fonts/**/*'
+    ]
   },
-  scripts: {
-    main: './resources/assets/scripts/',
-    modules: './app/*/Assets/scripts/'
+  dest: {
+    styles: './public/css',
+    scripts: './public/js',
+    fonts: './public/fonts'
   }
 };
 
@@ -33,14 +43,14 @@ const processCss = (files, name) => {
       precision: 10,
       includePaths: [
         './node_modules/',
-        path.styles.main
+        path.source.styles.main
       ]
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
     .pipe($.replace('/*!', '/*'))
     .pipe($.if($.util.env.production, $.csso()))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest(path.dest.styles));
 };
 
 const processJs = (files, name) => {
@@ -54,13 +64,13 @@ const processJs = (files, name) => {
     .pipe($.babel())
     .pipe($.if($.util.env.production, $.uglify()))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('./public/js'));
+    .pipe(gulp.dest(path.dest.scripts));
 };
 
 gulp.task('styles', () => {
   return processCss([
-    path.styles.main + 'admin.scss',
-    path.styles.modules + 'admin.scss'
+    path.source.styles.main + 'admin.scss',
+    path.source.styles.modules + 'admin.scss'
   ], 'admin').pipe($.size({
     title: 'styles'
   }));
@@ -68,22 +78,28 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   return processJs([
-    path.scripts.main + 'admin.js',
-    path.scripts.modules + 'admin.js'
+    path.source.scripts.main + 'admin.js',
+    path.source.scripts.modules + 'admin.js'
   ], 'admin').pipe($.size({
     title: 'scripts'
   }));
 });
 
+gulp.task('fonts', () => {
+  return gulp.src(path.source.fonts)
+    .pipe(gulp.dest(path.dest.fonts))
+    .pipe($.size({title: 'fonts'}));
+});
+
 gulp.task('watch', ['default'], () => {
   gulp.watch([
-    path.styles.modules + '**/*.scss',
-    path.styles.main + '**/*.scss'
+    path.source.styles.modules + '**/*.scss',
+    path.source.styles.main + '**/*.scss'
   ], ['styles']);
   gulp.watch([
-    path.scripts.modules + '**/*.js',
-    path.scripts.main + '**/*.js'
+    path.source.scripts.modules + '**/*.js',
+    path.source.scripts.main + '**/*.js'
   ], ['scripts']);
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', ['styles', 'scripts', 'fonts']);

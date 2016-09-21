@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ url('css/admin.css') }}">
 </head>
 <body>
+@include('admin.header')
 @yield('content')
 <script defer async src="{{ url('js/admin.js') }}"></script>
 </body>

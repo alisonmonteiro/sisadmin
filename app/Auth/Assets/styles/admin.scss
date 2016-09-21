@@ -7,20 +7,14 @@
 .admin-auth__body {
   display: table;
   background: #1e2b38;
-  color: #afafaf;
+  color: $gray-lighter;
 
   a {
-    color: #afafaf;
+    color: $gray-lighter;
   }
   label {
     font-weight: normal;
     font-size: 16px;
-  }
-
-  .btn-default {
-    background: #707070;
-    border-color: #7b7b7b;
-    color: #ffffff;
   }
 }
 

@@ -5,6 +5,4 @@
 
 @section('content')
     {{ trans('dashboard::info.name') }}
-
-    <a href="{{ url('admin/auth/logout') }}" title="Logout">Logout</a>
 @endsection

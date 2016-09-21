@@ -19,7 +19,9 @@
     "gulp-util": "^3.0.7"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^4.6.3",
+    "jquery": "^3.1.0"
   },
   "scripts": {
     "postinstall": "npm run prod",
