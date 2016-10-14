@@ -4,7 +4,7 @@
 ## Getting Started
 ~~~bash
 # Clone the project.
-git clone git@bitbucket.org:briba/sisadmin.git SisAdmin
+git clone git@github.com:briba/sisadmin.git SisAdmin
 
 # Enter into project folder.
 cd SisAdmin
