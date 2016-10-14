@@ -2,3 +2,36 @@
 @import "./admin/bootstrap";
 @import "./admin/bootswatch";
 @import "font-awesome/scss/font-awesome";
+
+// Structure
+html, body {
+  position: relative;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+// Nav
+.nav-sidebar li {
+  width: 100%;
+}
+
+// Footer
+.footer {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
