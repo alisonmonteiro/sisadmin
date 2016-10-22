@@ -3,6 +3,7 @@
 namespace SisAdmin\Users\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Menu;
 
 class UsersServiceProvider extends ServiceProvider
 {
@@ -22,6 +23,9 @@ class UsersServiceProvider extends ServiceProvider
     {
         $this->registerTranslations();
         $this->registerViews();
+
+        $menu = Menu::instance('admin-navbar');
+        $menu->url('admin/users', trans('users::info.name'));
     }
 
     /**
