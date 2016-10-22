@@ -1,5 +1,6 @@
 /node_modules
 /vendor
 .env
+.idea
 .ide_helper.php
 .phpstorm.meta.php
