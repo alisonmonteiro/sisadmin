@@ -23,9 +23,8 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td nowrap>
-                        <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="module-action">
-                            {{ trans('users::info.actions.edit') }}
-                        </a>&nbsp;
+                        <a href="{{ url('admin/users/' . $user->id . '/edit') }}"
+                           class="module-action">{{ trans('users::info.actions.edit') }}</a>&nbsp;
                         <a href="#" class="module-action">{{ trans('users::info.actions.delete') }}</a>
                     </td>
                 </tr>

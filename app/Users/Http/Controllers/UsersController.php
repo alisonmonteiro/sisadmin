@@ -36,4 +36,38 @@ class UsersController extends Controller
             'users' => $users,
         ]);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function getCreate()
+    {
+        return view('users::create');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     *
+     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function getEdit($id)
+    {
+        $user = $this->user->find($id);
+
+        if ($user) {
+            return view('users::edit', ['user' => $user]);
+        }
+
+        return redirect('admin/users')->with([
+            'alert' => [
+                'type' => 4,
+                'message' => 'Usuário não encontrado.',
+            ],
+        ]);
+    }
 }
