@@ -4,15 +4,15 @@
 @section('description', trans('users::info.description'))
 
 @section('content')
-    <h3>{{ trans('users::info.name') }}</h3>
+    @include('users::nav')
 
     @if (isset($users) && count($users) > 0)
         <table class="table table-striped table-hover module-table-index">
             <thead>
                 <tr>
                     <th width="30">#</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
+                    <th>{{ trans('users::info.fields.name') }}</th>
+                    <th>{{ trans('users::info.fields.email') }}</th>
                     <th width="100"></th>
                 </tr>
             </thead>
@@ -20,11 +20,13 @@
             @foreach($users as $count => $user)
                 <tr>
                     <td>{{ $count + ($users->perPage() * ($users->currentPage()-1)) + 1 }}</td>
-                    <td><a href="{{ url('admin/users/' . $user->id . '/edit') }}">{{ $user->name }}</a></td>
-                    <td><a href="{{ url('admin/users/' . $user->id . '/edit') }}">{{ $user->email }}</a></td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
                     <td nowrap>
-                        <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="module-action">Editar</a>&nbsp;
-                        <a href="#" class="module-action">Excluir</a>
+                        <a href="{{ url('admin/users/' . $user->id . '/edit') }}" class="module-action">
+                            {{ trans('users::info.actions.edit') }}
+                        </a>&nbsp;
+                        <a href="#" class="module-action">{{ trans('users::info.actions.delete') }}</a>
                     </td>
                 </tr>
             @endforeach
@@ -32,7 +34,7 @@
         </table>
     @else
         <div class="alert alert-warning">
-            <p>Nenhum item encontrado.</p>
+            <p>{{ trans('users::info.messages.no_items') }}</p>
         </div>
     @endif
 @endsection
